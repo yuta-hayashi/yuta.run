@@ -19,9 +19,83 @@
         <h2>Works</h2>
         <p class="subtitle">過去に作ったもの</p>
         <div id="works_list">
-          <work-card name="tekaku"></work-card>
-          <work-card name="Likes"></work-card>
-          <work-card name="mdtakaoka"></work-card>
+          <work-card
+            :work="{
+              name: 'tekaku',
+              title: 'てかく',
+              tech: [
+                'Vue.js',
+                'Typescript',
+                'Vuex',
+                'canvas',
+                'Firebase',
+                'TwitterAPI'
+              ],
+              link: [
+                { name: 'アクセス🚀', link: 'https://tekaku.yuta.run' },
+                { name: 'About', link: 'https://tekaku.yuta.run/about' }
+              ]
+            }"
+            >手書きてツイートできるWebアプリ(PWA)です。iPad向けに作られており、さらにApple
+            Pencilの筆圧も反映されるので手書き感が出ます。</work-card
+          >
+          <work-card
+            :work="{
+              name: 'Likes',
+              title: 'Likes',
+              tech: ['Vue.js', 'Vuex', 'Typescript', 'Firebase'],
+              link: [
+                { name: 'アクセス🚀', link: 'https://mdtakaoka.yuta.run' },
+                {
+                  name: 'GitHub',
+                  link: 'https://github.com/yuta-hayashi/likes'
+                },
+                {
+                  name: 'Figma',
+                  link:
+                    'https://www.figma.com/file/l4fWkVbDPPGMVugNPl5HDl/Likes-memo?node-id=0%3A1'
+                }
+              ]
+            }"
+            >日用品を写真でメモできるアプリ(PWA)です。
+            インストールボタンやショートカットメニューなどPWAの機能を多く取り入れています。
+            ネイティブにかなり近い作りになっています。</work-card
+          >
+          <work-card
+            :work="{
+              name: 'mdtakaoka',
+              title: 'MD高岡特設サイト',
+              tech: [
+                'Vue.js',
+                'Nuxt.js',
+                'Contentful',
+                'Netlify',
+                'Apps Script'
+              ],
+              link: [
+                { name: 'アクセス🚀', link: 'https://mdtakaoka.yuta.run' },
+                {
+                  name: 'Qiita',
+                  link: 'https://qiita.com/HYuta999/items/a703782c2a4f853e1495'
+                },
+                {
+                  name: 'GitHub',
+                  link: 'https://github.com/yuta-hayashi/mdtakaoka'
+                },
+                {
+                  name: 'Qiita(QR)',
+                  link: 'https://qiita.com/HYuta999/items/8858c062d3a2aaadea8c'
+                },
+                {
+                  name: 'GitHub(QR)',
+                  link: 'https://github.com/yuta-hayashi/qr-reception'
+                }
+              ]
+            }"
+            >IngressのローカルイベントMissionDay高岡の情報をまとめたサイトです。
+            Contentfulによる複数人での編集や、SearchConsoleでのSEOも意識しました。
+            QRコードによる受付システムも開発しました。</work-card
+          >
         </div>
       </section>
       <section>
@@ -77,7 +151,7 @@
         <div id="link_list">
           <a href="https://twitter.com/hyuta555" target="_blank">
             <div class="link_card">
-              <img class="link_img" src="icon/twitter.svg" /><span
+              <img class="link_img" src="/icon/twitter.svg" /><span
                 class="link_text"
                 >Twitter</span
               >
@@ -85,21 +159,21 @@
           >
           <a href="https://github.com/yuta-hayashi" target="_blank">
             <div class="link_card">
-              <img class="link_img" src="icon/github.svg" /><span
+              <img class="link_img" src="/icon/github.svg" /><span
                 class="link_text"
                 >GitHub</span
               >
             </div></a
           ><a href="https://blog.yuta.run/" target="_blank">
             <div class="link_card">
-              <img class="link_img" src="icon/blog.svg" /><span
+              <img class="link_img" src="/icon/blog.svg" /><span
                 class="link_text"
                 >Yuta's Blog</span
               >
             </div></a
           ><a href="https://qiita.com/HYuta999" target="_blank">
             <div class="link_card">
-              <img class="link_img" src="icon/Qiita.png" /></div
+              <img class="link_img" src="/icon/Qiita.png" /></div
           ></a>
         </div>
       </section>
@@ -150,7 +224,7 @@ a {
 #top_area {
   width: 100%;
   height: 100vh;
-  background: #f2ffeb;
+  background: var(--back);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -191,6 +265,7 @@ p {
   margin-top: 3em;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 #skills_list {
   display: flex;
@@ -200,6 +275,7 @@ p {
 #link_list {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 .link_card {
   height: 90px;

@@ -1,9 +1,11 @@
 <template>
   <div>
     <img @click="open" class="work_img" :src="'/img/' + work.name + '.png'" />
-    <div v-if="isModal" class="overlay" @click.self="close">
-      <Modal :work="work" @close="close"><slot></slot></Modal>
-    </div>
+    <transition name="modal">
+      <div v-if="isModal" class="overlay" @click.self="close">
+        <Modal :work="work" @close="close"><slot></slot></Modal>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -56,5 +58,33 @@ export default {
   align-items: center;
   flex-direction: column;
   backdrop-filter: blur(10px);
+  opacity: 1;
+}
+.modal-enter-active {
+  animation: SlideIn 0.8s;
+}
+.modal-leave-active {
+  animation: SlideOut 0.8s;
+}
+
+@keyframes SlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(400px) scale(0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1, 1);
+  }
+}
+@keyframes SlideOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0px) scale(1, 1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(400px) scale(0, 0);
+  }
 }
 </style>

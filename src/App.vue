@@ -282,6 +282,11 @@ p {
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
   display: flex;
   align-items: center;
+  transition: all 0.3s ease 0s;
+}
+.link_card:hover {
+  box-shadow: 6px 6px 10px 0 rgba(0, 0, 0, 0.25);
+  transform: translate(-0.2em, -0.2em);
 }
 .link_img {
   height: 48px;

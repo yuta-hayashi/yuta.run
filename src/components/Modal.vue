@@ -97,6 +97,7 @@ export default {
   padding: 0.5em;
   display: block;
   margin: 2em 2em 0 0;
+  transition: all 0.3s ease 0s;
 }
 .modal_link:hover {
   background: var(--dark);

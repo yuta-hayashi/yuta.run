@@ -37,7 +37,13 @@ export default {
 <style scoped>
 .work_img {
   width: 272px;
+  cursor: pointer;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease 0s;
+}
+.work_img:hover {
+  box-shadow: 6px 6px 10px 0 rgba(0, 0, 0, 0.25);
+  transform: translate(-0.2em, -0.2em);
 }
 .overlay {
   height: 100vh;

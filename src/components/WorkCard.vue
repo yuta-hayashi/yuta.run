@@ -43,6 +43,12 @@ export default {
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
   transition: all 0.3s ease 0s;
 }
+@media (max-width: 800px) {
+  .work_img {
+    width: 220px;
+    margin-bottom: 2em;
+  }
+}
 .work_img:hover {
   box-shadow: 6px 6px 10px 0 rgba(0, 0, 0, 0.25);
   transform: translate(-0.2em, -0.2em);

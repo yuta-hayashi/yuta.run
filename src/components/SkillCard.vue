@@ -38,6 +38,11 @@ export default {
   flex-direction: column;
   margin-top: 1em;
 }
+@media (max-width: 480px) {
+  .skill_card {
+    width: 100px;
+  }
+}
 .skill_img_box {
   width: 100px;
   height: 100px;
@@ -55,6 +60,11 @@ export default {
 .skill_name {
   text-align: center;
 }
+@media (max-width: 480px) {
+  .skill_name {
+    font-size: 1em;
+  }
+}
 .skill_progress {
   background: #ffffff;
   border: solid 1px #000;
@@ -62,5 +72,10 @@ export default {
   width: 160px;
   padding: 0px;
   margin: 0 auto;
+}
+@media (max-width: 480px) {
+  .skill_progress {
+    width: 100px;
+  }
 }
 </style>

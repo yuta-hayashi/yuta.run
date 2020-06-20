@@ -28,11 +28,11 @@
 <style scoped>
 #link_list {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 .link_card {
-  height: 90px;
+  height: 5em;
   width: auto;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
   display: flex;
@@ -41,25 +41,37 @@
   color: #000;
   overflow: hidden;
 }
+@media (max-width: 800px) {
+  .link_card {
+    height: 4em;
+    margin-bottom: 1em;
+  }
+}
 
 .link_card:hover {
   transform: translate(-0.2em, -0.2em);
 }
 .link_img {
-  height: 48px;
+  height: 2em;
   margin: 0 1em;
 }
 .link_text {
-  font-size: 24px;
+  font-size: 1.6em;
   font-weight: bold;
   text-decoration: none;
   margin-right: 1em;
+}
+@media (max-width: 800px) {
+  .link_text {
+    font-size: 1em;
+  }
 }
 .link_body {
   transition: all 0.5s ease;
   z-index: 2;
   position: relative;
 }
+
 .twi:hover {
   box-shadow: 6px 6px 20px 0 rgba(29, 161, 242, 0.8);
 }

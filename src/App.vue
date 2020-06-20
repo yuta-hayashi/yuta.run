@@ -5,7 +5,7 @@
     </div>
     <div id="sections">
       <section>
-        <h2>Write once, run anywhere.</h2>
+        <h2><span>Write once, </span> <span>run anywhere.</span></h2>
         <p class="top_p">
           Webアプリケーションは、これを実現できると私は考えています。<br />
           モバイルから、デスクトップまでOSを問わずブラウザさえあれば、
@@ -196,6 +196,11 @@ a {
   max-width: 860px;
   margin: 0 auto;
 }
+@media (max-width: 800px) {
+  #sections {
+    margin: 0 1em;
+  }
+}
 #top_area {
   width: 100%;
   height: 100vh;
@@ -205,25 +210,38 @@ a {
   align-items: center;
 }
 #top_name {
-  font-size: 144px;
+  font-size: 10em;
   font-style: normal;
   font-weight: bold;
-  font-size: 144px;
-  margin-bottom: 200px;
+  margin-bottom: 1em;
+}
+
+@media (max-width: 480px) {
+  #top_name {
+    font-size: 5em;
+  }
 }
 
 section {
   margin: 5em 0;
 }
 h2 {
-  font-size: 64px;
+  font-size: 4em;
   text-align: left;
   font-weight: bold;
   margin-bottom: 0;
 }
+@media (max-width: 800px) {
+  h2 {
+    font-size: 3em;
+  }
+  h2 > span {
+    display: inline-block;
+  }
+}
 p {
   text-align: left;
-  font-size: 24px;
+  font-size: 1.5em;
   font-weight: bold;
   line-height: 2em;
   letter-spacing: 2px;
@@ -236,11 +254,21 @@ p {
   margin-top: -0.8em;
   margin-bottom: 3em;
 }
+@media (max-width: 800px) {
+  .subtitle {
+    margin-bottom: 1em;
+  }
+}
 #works_list {
   margin-top: 3em;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+}
+@media (max-width: 480px) {
+  #works_list {
+    justify-content: space-around;
+  }
 }
 #skills_list {
   display: flex;

@@ -48,7 +48,7 @@ export default {
   flex-wrap: wrap;
 }
 .modal_img {
-  height: 100%;
+  width: 500px;
 }
 
 .modal_content {
@@ -102,5 +102,29 @@ export default {
 .modal_link:hover {
   background: var(--dark);
   color: #ffffff;
+}
+@media (max-width: 800px) {
+  .modal {
+    width: 70%;
+    height: auto;
+  }
+  .modal_img {
+    width: 100%;
+  }
+  .modal_content {
+    width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  .modal {
+    width: 90%;
+  }
+  .modal_img {
+    width: 100%;
+  }
+  .modal_content {
+    padding: 1em;
+    width: 100%;
+  }
 }
 </style>

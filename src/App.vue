@@ -152,8 +152,8 @@
       </section>
     </div>
     <footer>
-      <small>Last Updated 6/19/2020</small>
-      <small>Copyright 2020 yuta.run</small>
+      <div>Last Updated 6/19/2020</div>
+      <div>Copyright 2020 yuta.run</div>
     </footer>
   </div>
 </template>
@@ -246,5 +246,10 @@ p {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+}
+footer {
+  margin: 1em;
+  text-align: center;
+  color: #858585;
 }
 </style>

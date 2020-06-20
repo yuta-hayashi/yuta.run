@@ -148,34 +148,7 @@
       <section>
         <h2>Link</h2>
         <p class="subtitle">各種ページ</p>
-        <div id="link_list">
-          <a href="https://twitter.com/hyuta555" target="_blank">
-            <div class="link_card">
-              <img class="link_img" src="/icon/twitter.svg" /><span
-                class="link_text"
-                >Twitter</span
-              >
-            </div></a
-          >
-          <a href="https://github.com/yuta-hayashi" target="_blank">
-            <div class="link_card">
-              <img class="link_img" src="/icon/github.svg" /><span
-                class="link_text"
-                >GitHub</span
-              >
-            </div></a
-          ><a href="https://blog.yuta.run/" target="_blank">
-            <div class="link_card">
-              <img class="link_img" src="/icon/blog.svg" /><span
-                class="link_text"
-                >Yuta's Blog</span
-              >
-            </div></a
-          ><a href="https://qiita.com/HYuta999" target="_blank">
-            <div class="link_card">
-              <img class="link_img" src="/icon/Qiita.png" /></div
-          ></a>
-        </div>
+        <link-list />
       </section>
     </div>
     <footer>
@@ -188,12 +161,14 @@
 <script>
 import WorkCard from "./components/WorkCard.vue";
 import SkillCard from "./components/SkillCard.vue";
+import LinkList from "./components/LinkList.vue";
 
 export default {
   name: "App",
   components: {
     WorkCard,
-    SkillCard
+    SkillCard,
+    LinkList
   },
   data() {
     return {
@@ -271,32 +246,5 @@ p {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-}
-#link_list {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-.link_card {
-  height: 90px;
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
-  display: flex;
-  align-items: center;
-  transition: all 0.3s ease 0s;
-}
-.link_card:hover {
-  box-shadow: 6px 6px 10px 0 rgba(0, 0, 0, 0.25);
-  transform: translate(-0.2em, -0.2em);
-}
-.link_img {
-  height: 48px;
-  margin: 0 1em;
-}
-.link_text {
-  font-size: 24px;
-  font-weight: bold;
-  text-decoration: none;
-  margin-right: 1em;
-  color: #000;
 }
 </style>

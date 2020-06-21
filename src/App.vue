@@ -102,47 +102,47 @@
         <h2>Skills</h2>
         <p class="subtitle">使える技術</p>
         <div id="skills_list">
-          <skill-card name="HTML5" :progress="80" fileName="HTML5"></skill-card>
-          <skill-card name="CSS" :progress="80" fileName="CSS"></skill-card>
-          <skill-card
-            name="Javascript"
-            :progress="70"
-            fileName="Javascript"
-          ></skill-card>
-          <skill-card
-            name="typescript"
-            :progress="50"
-            fileName="typescript"
-          ></skill-card>
-          <skill-card
-            name="Vue.js"
-            :progress="70"
-            fileName="Vue_js"
-          ></skill-card>
-          <skill-card
-            name="Nuxt.js"
-            :progress="70"
-            fileName="Nuxt_js"
-          ></skill-card>
-          <skill-card
-            name="Firebase"
-            :progress="50"
-            fileName="Firebase"
-          ></skill-card>
-          <skill-card
-            name="Node.js"
-            :progress="50"
-            fileName="Node_js"
-          ></skill-card>
-          <skill-card name="GO" :progress="40" fileName="GO"></skill-card>
-          <skill-card name="GCP" :progress="30" fileName="GCP"></skill-card>
-          <skill-card
-            name="Docker"
-            :progress="40"
-            fileName="Docker"
-          ></skill-card>
-          <skill-card name="Git" :progress="70" fileName="git"></skill-card>
-          <skill-card name="Figma" :progress="60" fileName="Figma"></skill-card>
+          <skill-card name="HTML5" :progress="80" fileName="HTML5"
+            >アプリケーションを構築する上でのマークアップができます。</skill-card
+          >
+          <skill-card name="CSS" :progress="80" fileName="CSS"
+            >Flexを使ったレスポンシブなレイアウトが得意です。</skill-card
+          >
+          <skill-card name="Javascript" :progress="70" fileName="Javascript"
+            >フレームワークなしでの実装やjQueryの利用経験もあります。</skill-card
+          >
+          <skill-card name="typescript" :progress="50" fileName="typescript"
+            >型付の知識やVue.jsでの使用経験あり。DDDは勉強中。</skill-card
+          >
+          <skill-card name="Vue.js" :progress="70" fileName="Vue_js"
+            >お気に入りのフレームワーク。Vuex,
+            Routerなども使えます。</skill-card
+          >
+          <skill-card name="Nuxt.js" :progress="70" fileName="Nuxt_js"
+            >中規模以上のものを作るときに使います。</skill-card
+          >
+          <skill-card name="Firebase" :progress="50" fileName="Firebase"
+            >SPAのサーバとしてFirestore, Storage,
+            Authの使用経験あり。</skill-card
+          >
+          <skill-card name="Node.js" :progress="50" fileName="Node_js"
+            >Firebase FunctionsやExpressでの開発経験があります。</skill-card
+          >
+          <skill-card name="GO" :progress="40" fileName="GO"
+            >NoSQL DBを用いたREST APIを開発しました。</skill-card
+          >
+          <skill-card name="GCP" :progress="30" fileName="GCP"
+            >Firebaseの延長線上として、様々なサービスが使えます。</skill-card
+          >
+          <skill-card name="Docker" :progress="40" fileName="Docker"
+            >DBの環境構築やCaaSにデプロイして使っています。</skill-card
+          >
+          <skill-card name="Git" :progress="70" fileName="git"
+            >基本的な操作とGitHubFlowの理解の知識が多少あります。</skill-card
+          >
+          <skill-card name="Figma" :progress="60" fileName="Figma"
+            >UIのデザインをするときに使います。</skill-card
+          >
         </div>
       </section>
       <section>

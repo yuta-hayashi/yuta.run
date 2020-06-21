@@ -15,6 +15,9 @@
       height: 100%; width:{{ progress }}%; }
     </component>
     <div class="skill_progress" :class="fileName"></div>
+    <div class="skill_detail">
+      <p class="skill_detail_body"><slot></slot></p>
+    </div>
   </div>
 </template>
 
@@ -37,6 +40,7 @@ export default {
   justify-content: center;
   flex-direction: column;
   margin-top: 1em;
+  position: relative;
 }
 @media (max-width: 480px) {
   .skill_card {
@@ -60,9 +64,35 @@ export default {
 .skill_name {
   text-align: center;
 }
+.skill_detail {
+  position: absolute;
+  background: #ffffffd5;
+  backdrop-filter: blur(10px);
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  font-size: 1.2em;
+  opacity: 1;
+  transition: 0.3s;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.skill_detail_body {
+  margin: 1em;
+  font-size: 1em;
+  font-weight: normal;
+}
+.skill_detail:hover {
+  opacity: 1;
+}
 @media (max-width: 480px) {
   .skill_name {
     font-size: 1em;
+  }
+  .skill_detail_body {
+    font-size: 0.8em;
   }
 }
 .skill_progress {

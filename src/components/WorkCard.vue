@@ -65,6 +65,7 @@ export default {
   flex-direction: column;
   backdrop-filter: blur(10px);
   opacity: 1;
+  z-index: 1;
 }
 .modal-enter-active {
   animation: SlideIn 0.8s;

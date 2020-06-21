@@ -73,7 +73,7 @@ export default {
   left: 0;
   top: 0;
   font-size: 1.2em;
-  opacity: 1;
+  opacity: 0;
   transition: 0.3s;
   justify-content: center;
   flex-direction: column;

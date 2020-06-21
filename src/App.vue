@@ -45,7 +45,7 @@
               title: 'Likes',
               tech: ['Vue.js', 'Vuex', 'Typescript', 'Firebase'],
               link: [
-                { name: 'アクセス🚀', link: 'https://mdtakaoka.yuta.run' },
+                { name: 'アクセス🚀', link: 'https://likes.yuta.run' },
                 {
                   name: 'GitHub',
                   link: 'https://github.com/yuta-hayashi/likes'

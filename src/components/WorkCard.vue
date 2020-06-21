@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div class="work_card">
+    <span class="work_click">Click!</span>
     <img @click="open" class="work_img" :src="'/img/' + work.name + '.png'" />
     <transition name="modal">
       <div v-if="isModal" class="overlay" @click.self="close">
@@ -50,8 +51,19 @@ export default {
   }
 }
 .work_img:hover {
-  box-shadow: 6px 6px 10px 0 rgba(0, 0, 0, 0.25);
-  transform: translate(-0.2em, -0.2em);
+  box-shadow: 8px 8px 20px 0 rgba(0, 0, 0, 0.25);
+  transform: translate(-0.5em, -0.5em);
+}
+.work_click {
+  position: absolute;
+  font-size: 1.3em;
+  font-style: italic;
+  text-decoration: underline;
+  transition: 0.3s;
+  z-index: -1;
+}
+.work_card:hover .work_click {
+  transform: translate(-2em, -2em) rotate(-30deg);
 }
 .overlay {
   height: 100vh;

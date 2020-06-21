@@ -56,6 +56,7 @@ export default {
   width: 400px;
   display: flex;
   flex-direction: column;
+  overflow: scroll;
 }
 .modal_close {
   width: 1.5em;
@@ -103,7 +104,7 @@ export default {
   background: var(--dark);
   color: #ffffff;
 }
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
   .modal {
     width: 70%;
     height: auto;
@@ -113,6 +114,7 @@ export default {
   }
   .modal_content {
     width: 100%;
+    height: 300px;
   }
 }
 @media (max-width: 480px) {

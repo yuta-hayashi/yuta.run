@@ -1,12 +1,6 @@
 <template>
   <div id="link_list">
-    <a href="https://twitter.com/hyuta555" target="_blank">
-      <div class="link_card twi">
-        <img class="link_img" src="/icon/twitter.svg" /><span class="link_text"
-          >Twitter</span
-        >
-      </div></a
-    ><a href="https://github.com/yuta-hayashi" target="_blank">
+    <a href="https://github.com/yuta-hayashi" target="_blank">
       <div class="link_card hub">
         <img class="link_img" src="/icon/github.svg" /><span class="link_text"
           >GitHub</span
@@ -16,6 +10,13 @@
       <div class="link_card blo">
         <img class="link_img" src="/icon/blog.svg" /><span class="link_text"
           >Yuta's Blog</span
+        >
+      </div></a
+    >
+    <a href="https://twitter.com/hyuta555" target="_blank">
+      <div class="link_card twi">
+        <img class="link_img" src="/icon/twitter.svg" /><span class="link_text"
+          >Twitter</span
         >
       </div></a
     ><a href="https://qiita.com/HYuta999" target="_blank">

@@ -4,14 +4,13 @@
       <img class="skill_img" :src="'/icon/' + fileName + '.svg'" />
     </div>
     <p class="skill_name">{{ name }}</p>
-    <!-- <progress class="skill_progress" value="70" max="100">70%</progress> -->
     <style>
       .skill_progress::after {
         width: %;
       }
     </style>
     <component is="style">
-      .{{ fileName }}::after { content: ""; display: block; background: #000;
+      .{{ fileName }}::after { content: ""; display: block; background: #2c3e50;
       height: 100%; width:{{ progress }}%; }
     </component>
     <div class="skill_progress" :class="fileName"></div>
@@ -97,7 +96,7 @@ export default {
 }
 .skill_progress {
   background: #ffffff;
-  border: solid 1px #000;
+  border: solid 1px #2c3e50;
   height: 10px;
   width: 160px;
   padding: 0px;

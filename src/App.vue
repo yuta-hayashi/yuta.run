@@ -6,6 +6,7 @@
     <div id="sections">
       <section>
         <h2><span>Write once, </span> <span>run anywhere.</span></h2>
+        <small class="slogan_name">-- Sun Microsystems</small>
         <p class="top_p">
           Webアプリケーションは、これを実現できると私は考えています。<br />
           モバイルから、デスクトップまでOSを問わずブラウザさえあれば、
@@ -220,6 +221,12 @@ a {
   #top_name {
     font-size: 5em;
   }
+}
+.slogan_name {
+  display: block;
+  text-align: right;
+  font-size: 1em;
+  font-style: italic;
 }
 
 section {

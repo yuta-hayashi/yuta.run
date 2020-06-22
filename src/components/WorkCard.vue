@@ -4,7 +4,9 @@
     <img @click="open" class="work_img" :src="'/img/' + work.name + '.png'" />
     <transition name="modal">
       <div v-if="isModal" class="overlay" @click.self="close">
-        <Modal :work="work" @close="close"><slot></slot></Modal>
+        <Modal :work="work" @close="close">
+          <slot></slot>
+        </Modal>
       </div>
     </transition>
   </div>
@@ -76,6 +78,7 @@ export default {
   align-items: center;
   flex-direction: column;
   backdrop-filter: blur(10px);
+  background: #ffffffaa;
   opacity: 1;
   z-index: 1;
 }

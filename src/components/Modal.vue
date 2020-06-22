@@ -10,7 +10,9 @@
         </svg>
       </div>
       <h3 class="modal_title">{{ work.title }}</h3>
-      <p class="modal_text"><slot></slot></p>
+      <p class="modal_text">
+        <slot></slot>
+      </p>
       <div class="modal_techs">
         <span v-for="(tech, index) in work.tech" :key="index">{{ tech }}</span>
       </div>
@@ -21,8 +23,7 @@
           :key="index"
           :href="item.link"
           target="_blank"
-          >{{ item.name }}</a
-        >
+        >{{ item.name }}</a>
       </div>
     </div>
   </div>
@@ -49,6 +50,7 @@ export default {
 }
 .modal_img {
   width: 500px;
+  height: 500px;
 }
 
 .modal_content {
@@ -111,6 +113,7 @@ export default {
   }
   .modal_img {
     width: 100%;
+    height: auto;
   }
   .modal_content {
     width: 100%;
@@ -123,6 +126,7 @@ export default {
   }
   .modal_img {
     width: 100%;
+    height: auto;
   }
   .modal_content {
     padding: 1em;

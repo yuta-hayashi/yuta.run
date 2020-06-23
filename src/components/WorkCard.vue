@@ -3,7 +3,7 @@
     <span class="work_click">Click!</span>
     <img @click="open" class="work_img" :src="'/img/' + work.name + '.png'" />
     <transition name="modal">
-      <div v-if="isModal" class="overlay" @click.self="close">
+      <div v-show="isModal" class="overlay" @click.self="close">
         <Modal :work="work" @close="close">
           <slot></slot>
         </Modal>

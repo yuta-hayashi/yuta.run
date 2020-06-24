@@ -132,6 +132,9 @@
           <skill-card name="GO" :progress="40" fileName="GO"
             >NoSQL DBを用いたREST APIを開発しました。</skill-card
           >
+          <skill-card name="MySQL" :progress="60" fileName="mysql"
+            >基本的なSQLと正規化ができます。</skill-card
+          >
           <skill-card name="GCP" :progress="30" fileName="GCP"
             >Firebaseの延長線上として、様々なサービスが使えます。</skill-card
           >
@@ -144,6 +147,8 @@
           <skill-card name="Figma" :progress="60" fileName="Figma"
             >UIのデザインをするときに使います。</skill-card
           >
+          <div class="empty_card"></div>
+          <div class="empty_card"></div>
         </div>
       </section>
       <section>
@@ -279,8 +284,17 @@ p {
 }
 #skills_list {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   flex-wrap: wrap;
+}
+.empty_card {
+  width: 200px;
+  height: 200px;
+}
+@media (max-width: 480px) {
+  .empty_card {
+    width: 100px;
+  }
 }
 footer {
   margin: 1em;

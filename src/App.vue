@@ -22,6 +22,30 @@
         <div id="works_list">
           <work-card
             :work="{
+              name: 'skillfuls',
+              title: 'Skillfuls',
+              tech: [
+                'Nuxt.js',
+                'Typescript',
+                'NestJS',
+                'TypeORM',
+                'Firebase',
+                'Heroku',
+                'GCP',
+              ],
+              link: [
+                { name: 'アクセス🚀', link: 'https://skillfuls.dev' },
+                { name: 'About', link: 'https://skillfuls.dev/landing' },
+                {
+                  name: 'Qiita',
+                  link: 'https://qiita.com/HYuta999/items/28f1526447637ad87941',
+                },
+              ],
+            }"
+            >プログラマ向けのスキル記録サービスです。このポートフォリオを作っているときに自分のスキルを振り返っていて、記録できるサービスがあったらいいなと思って作りました！</work-card
+          >
+          <work-card
+            :work="{
               name: 'tekaku',
               title: 'てかく',
               tech: [
@@ -30,12 +54,12 @@
                 'Vuex',
                 'canvas',
                 'Firebase',
-                'TwitterAPI'
+                'TwitterAPI',
               ],
               link: [
                 { name: 'アクセス🚀', link: 'https://tekaku.yuta.run' },
-                { name: 'About', link: 'https://tekaku.yuta.run/about' }
-              ]
+                { name: 'About', link: 'https://tekaku.yuta.run/about' },
+              ],
             }"
             >手書きてツイートできるWebアプリ(PWA)です。iPad向けに作られており、さらにApple
             Pencilの筆圧も反映されるので手書き感が出ます。</work-card
@@ -49,14 +73,14 @@
                 { name: 'アクセス🚀', link: 'https://likes.yuta.run' },
                 {
                   name: 'GitHub',
-                  link: 'https://github.com/yuta-hayashi/likes'
+                  link: 'https://github.com/yuta-hayashi/likes',
                 },
                 {
                   name: 'Figma',
                   link:
-                    'https://www.figma.com/file/l4fWkVbDPPGMVugNPl5HDl/Likes-memo?node-id=0%3A1'
-                }
-              ]
+                    'https://www.figma.com/file/l4fWkVbDPPGMVugNPl5HDl/Likes-memo?node-id=0%3A1',
+                },
+              ],
             }"
             >日用品を写真でメモできるアプリ(PWA)です。
             インストールボタンやショートカットメニューなどPWAの機能を多く取り入れています。
@@ -71,27 +95,27 @@
                 'Nuxt.js',
                 'Contentful',
                 'Netlify',
-                'Apps Script'
+                'Apps Script',
               ],
               link: [
                 { name: 'アクセス🚀', link: 'https://mdtakaoka.yuta.run' },
                 {
                   name: 'Qiita',
-                  link: 'https://qiita.com/HYuta999/items/a703782c2a4f853e1495'
+                  link: 'https://qiita.com/HYuta999/items/a703782c2a4f853e1495',
                 },
                 {
                   name: 'GitHub',
-                  link: 'https://github.com/yuta-hayashi/mdtakaoka'
+                  link: 'https://github.com/yuta-hayashi/mdtakaoka',
                 },
                 {
                   name: 'Qiita(QR)',
-                  link: 'https://qiita.com/HYuta999/items/8858c062d3a2aaadea8c'
+                  link: 'https://qiita.com/HYuta999/items/8858c062d3a2aaadea8c',
                 },
                 {
                   name: 'GitHub(QR)',
-                  link: 'https://github.com/yuta-hayashi/qr-reception'
-                }
-              ]
+                  link: 'https://github.com/yuta-hayashi/qr-reception',
+                },
+              ],
             }"
             >IngressのローカルイベントMissionDay高岡の情報をまとめたサイトです。
             Contentfulによる複数人での編集や、SearchConsoleでのSEOも意識しました。
@@ -113,7 +137,7 @@
             >フレームワークなしでの実装やjQueryの利用経験もあります。</skill-card
           >
           <skill-card name="typescript" :progress="50" fileName="typescript"
-            >型付の知識やVue.jsでの使用経験あり。DDDは勉強中。</skill-card
+            >型付の知識やVue.jsでの使用経験あり。</skill-card
           >
           <skill-card name="Vue.js" :progress="70" fileName="Vue_js"
             >お気に入りのフレームワーク。Vuex,
@@ -147,7 +171,14 @@
           <skill-card name="Figma" :progress="60" fileName="Figma"
             >UIのデザインをするときに使います。</skill-card
           >
-          <div class="empty_card"></div>
+          <a
+            href="https://skillfuls.dev/user/hyuta"
+            target="_blank"
+            ref="noreffnoopenerer"
+            class="skillfuls_link"
+          >
+            Skillfulsで最新のスキルを見る👀
+          </a>
           <div class="empty_card"></div>
         </div>
       </section>
@@ -174,12 +205,12 @@ export default {
   components: {
     WorkCard,
     SkillCard,
-    LinkList
+    LinkList,
   },
   data() {
     return {
       fullName: "yuta.run",
-      name: ""
+      name: "",
     };
   },
   mounted() {
@@ -189,8 +220,8 @@ export default {
     addName() {
       this.name += this.fullName.slice(0, 1);
       this.fullName = this.fullName.slice(1);
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -300,5 +331,23 @@ footer {
   margin: 1em;
   text-align: center;
   color: #858585;
+}
+.skillfuls_link {
+  margin-top: 1em;
+  width: 200px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4em;
+  font-weight: bold;
+  color: var(--dark);
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+}
+@media (max-width: 480px) {
+  .skillfuls_link {
+    margin-top: 0.8em;
+    width: 135px;
+  }
 }
 </style>

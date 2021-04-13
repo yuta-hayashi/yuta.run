@@ -18,11 +18,11 @@ import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 
 export default {
   components: {
-    Modal
+    Modal,
   },
   name: "WorkCard",
   props: {
-    work: Object
+    work: Object,
   },
   data() {
     return { isModal: false };
@@ -35,8 +35,8 @@ export default {
     close() {
       enableBodyScroll(document.body);
       this.isModal = false;
-    }
-  }
+    },
+  },
 };
 </script>
 <style scoped>
@@ -45,6 +45,7 @@ export default {
   cursor: pointer;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
   transition: all 0.3s ease 0s;
+  margin-bottom: 2em;
 }
 @media (max-width: 800px) {
   .work_img {

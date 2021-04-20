@@ -1,6 +1,5 @@
 [[redirects]]
   from = "/*"
-  to = "/index.html"
+  to = "/"
   status = 301
   force = true
-  query = {path = ":path"}

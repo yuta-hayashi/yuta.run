@@ -1,7 +1,8 @@
 import 'server-only'
 import { createClient } from 'newt-client-js'
 import { cache } from 'react'
-import type { Article } from '@/types/newtApi'
+import type { Article, Tag } from '@/types/newtApi'
+import type { GetContentsQuery } from 'newt-client-js/dist/types/types'
 
 const client = createClient({
   spaceUid: process.env.NEWT_SPACE_UID + '',
@@ -9,13 +10,17 @@ const client = createClient({
   apiType: 'api',
 })
 
-export const getArticles = cache(async () => {
+export const getArticles = cache(async ({ tag }: { tag?: string } = {}) => {
+  let query: GetContentsQuery = {
+    select: ['_id', 'title', 'slug', 'body', 'tags'],
+  }
+
+  tag && (query.tag = tag)
+
   const { items } = await client.getContents<Article>({
     appUid: 'blog',
     modelUid: 'article',
-    query: {
-      select: ['_id', 'title', 'slug', 'body', 'tags'],
-    },
+    query,
   })
   return items
 })
@@ -30,4 +35,15 @@ export const getArticleBySlug = cache(async (slug: string) => {
     },
   })
   return article
+})
+
+export const getTags = cache(async () => {
+  const { items } = await client.getContents<Tag>({
+    appUid: 'blog',
+    modelUid: 'tag',
+    query: {
+      select: ['_id', 'name', 'slug'],
+    },
+  })
+  return items
 })

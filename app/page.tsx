@@ -2,6 +2,26 @@ import Image from 'next/image'
 import { SocialLinkButton } from '@/app/_components/SocialLinkButton'
 
 export default function Home() {
+  const skills = [
+    {
+      category: 'Backend',
+      skills: 'Ruby on Rails, Sidekiq, Rspec, PostgreSQL, GraphQL, Node.js, TypeScript, Express',
+    },
+    {
+      category: 'Frontend',
+      skills:
+        'React, Next.js, TypeScript, ApolloClient, Jest, Vue.js, Nuxt.js, SCSS, Backbone.js, jQuery',
+    },
+    {
+      category: 'Infrastructure / Ops',
+      skills: 'Heroku, AWS, GitHub Actions, Datadog, Sentry, Google Cloud',
+    },
+    {
+      category: 'Other',
+      skills: 'Elasticsearch, Flutter, ImageMagick, Rust',
+    },
+  ]
+
   return (
     <main className='mx-auto max-w-4xl px-6 lg:px-8'>
       <div className='mb-10'>
@@ -45,6 +65,27 @@ export default function Home() {
             name='Bluesky'
             iconName='bluesky'
           />
+        </div>
+      </section>
+
+      <section className='mb-8'>
+        <h2 className='text-2xl font-bold tracking-tight text-black mb-4'>Skills</h2>
+        <p className='mt-1 max-w-2xl leading-6 text-gray-500'>
+          主に業務で3年ほど扱ってきた言語、ライブラリ、ミドルウェアです。
+        </p>
+        <div>
+          <div className='mt-6 border-t border-gray-100'>
+            <dl className='divide-y divide-gray-100'>
+              {skills.map((skill) => (
+                <div className='py-6 grid grid-cols-6 gap-4' key={skill.category}>
+                  <dt className='text-sm font-medium leading-6 text-gray-900'>{skill.category}</dt>
+                  <dd className='mt-1 text-sm leading-6 text-gray-700 col-span-5 sm:mt-0'>
+                    {skill.skills}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </div>
         </div>
       </section>
     </main>

@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import { SocialLinkButton } from '@/app/_components/SocialLinkButton'
 
 export default function Home() {
@@ -23,7 +22,7 @@ export default function Home() {
   ]
 
   return (
-    <main className='mx-auto max-w-4xl px-6 lg:px-8'>
+    <main className='mx-auto my-6 max-w-4xl px-6 lg:px-8'>
       <div className='mb-10'>
         <h1 className='text-4xl font-bold tracking-tight text-black sm:text-6xl'>Yuta Hayashi</h1>
         <p className='mt-6 text-lg leading-9 text-gray-800'>
@@ -37,7 +36,7 @@ export default function Home() {
         </p>
       </div>
 
-      <section className='mb-8'>
+      <section className='mb-10'>
         <h2 className='text-2xl font-bold tracking-tight text-black mb-4'>Links</h2>
         <div className='flex flex-wrap gap-8'>
           <SocialLinkButton
@@ -68,7 +67,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className='mb-8'>
+      <section className='mb-10'>
         <h2 className='text-2xl font-bold tracking-tight text-black mb-4'>Skills</h2>
         <p className='mt-1 max-w-2xl leading-6 text-gray-500'>
           主に業務で3年ほど扱ってきた言語、ライブラリ、ミドルウェアです。

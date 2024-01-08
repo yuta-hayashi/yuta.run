@@ -16,6 +16,37 @@ export default function Home() {
           Rustでの画像合成処理、パフォーマンスチューニングなど幅広い分野を経験しています。
         </p>
       </div>
+
+      <section className='mb-8'>
+        <h2 className='text-2xl font-bold tracking-tight text-black mb-4'>Links</h2>
+        <div className='flex flex-wrap gap-8'>
+          <SocialLinkButton
+            href='https://github.com/yuta-hayashi'
+            socialId='yuta-hayashi'
+            name='GitHub'
+            iconName='github'
+            className=''
+          />
+          <SocialLinkButton
+            href='https://zenn.dev/hyuta'
+            socialId='hyuta'
+            name='Zenn'
+            iconName='zenn'
+          />
+          <SocialLinkButton
+            href='https://twitter.com/hyuta555'
+            socialId='hyuta555'
+            name='X'
+            iconName='x'
+          />
+          <SocialLinkButton
+            href='https://bsky.app/profile/yuta.run'
+            socialId='yuta.run'
+            name='Bluesky'
+            iconName='bluesky'
+          />
+        </div>
+      </section>
     </main>
   )
 }

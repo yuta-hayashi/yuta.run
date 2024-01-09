@@ -42,11 +42,6 @@ const RSSList: { url: string; source: SourceSiteType }[] = [
   },
 ]
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse<TimeLine>) {
-  const response = await getTimeline()
-  res.status(200).json(response)
-}
-
 export async function getTimeline(): Promise<TimeLine> {
   let articles: Article[] = []
   for await (const rss of RSSList) {

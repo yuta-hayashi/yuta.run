@@ -3,16 +3,15 @@ import { getTimeline } from '@/lib/timeline'
 export async function GET() {
   const timeline = await getTimeline()
 
-  const items = timeline.articles.map(
-    (article) =>
-      `<item>
+  const items = timeline.articles.map((article) => {
+    return `<item>
             <title>${article.title}</title>
             <link>${article.link}</link>
             <description>${article.content}</description>
             <pubDate>${article.pubDate}</pubDate>
             <guid>${article.link}</guid>
-        </item>`,
-  )
+        </item>`
+  })
 
   const rss = `<?xml version="1.0" encoding="UTF-8"?>
     <rss version="2.0">

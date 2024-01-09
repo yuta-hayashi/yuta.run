@@ -7,7 +7,7 @@ import type { GetContentsQuery } from 'newt-client-js/dist/types/types'
 const client = createClient({
   spaceUid: process.env.NEWT_SPACE_UID + '',
   token: process.env.NEWT_CDN_API_TOKEN + '',
-  apiType: 'api',
+  apiType: process.env.NODE_ENV === 'development' ? 'api' : 'cdn',
 })
 
 export const getArticles = cache(async ({ tag }: { tag?: string } = {}) => {

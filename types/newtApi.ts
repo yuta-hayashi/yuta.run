@@ -11,3 +11,11 @@ export type Article = {
   body: string
   tags: Tag[]
 }
+
+export type ActivityItem = {
+  _id: string
+  title: string
+  url: string
+  description: string
+  published_at: string
+}

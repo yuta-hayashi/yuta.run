@@ -1,6 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import Parser from 'rss-parser'
 import Crypto from 'crypto'
+import { getActivityItems } from './newt'
 
 export interface TimeLine {
   articles: Article[]
@@ -21,6 +22,7 @@ export const SourceSite = {
   YutasBlog: "Yuta'sBlog",
   Zenn: 'Zenn',
   Qiita: 'Qiita',
+  Other: 'Other Website',
 } as const
 
 export type SourceSiteType = (typeof SourceSite)[keyof typeof SourceSite]
@@ -51,6 +53,21 @@ export async function getTimeline(): Promise<TimeLine> {
     const siteArticles = await fetchRss(rss.url, rss.source)
     articles.push.apply(articles, siteArticles)
   }
+
+  await getActivityItems().then((items) => {
+    const activityItemArticles = items.map((item) => {
+      return {
+        id: item._id,
+        title: item.title,
+        pubDate: new Date(item.published_at).toUTCString(),
+        link: item.url,
+        content: item.description.slice(0, 100),
+        source: SourceSite.Other,
+      }
+    })
+    articles.push.apply(articles, activityItemArticles)
+  })
+
   articles.sort((a, b) => (new Date(a.pubDate) > new Date(b.pubDate) ? -1 : 1))
   return { articles: articles }
 }

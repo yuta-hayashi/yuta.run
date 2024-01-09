@@ -1,6 +1,33 @@
 import { SocialLinkButton } from '@/app/_components/SocialLinkButton'
 
 export default function Home() {
+  const socialLinks = [
+    {
+      href: 'https://github.com/yuta-hayashi',
+      socialId: 'yuta-hayashi',
+      name: 'GitHub',
+      iconName: 'github',
+    },
+    {
+      href: 'https://zenn.dev/hyuta',
+      socialId: 'hyuta',
+      name: 'Zenn',
+      iconName: 'zenn',
+    },
+    {
+      href: 'https://twitter.com/hyuta555',
+      socialId: 'hyuta555',
+      name: 'X',
+      iconName: 'x',
+    },
+    {
+      href: 'https://bsky.app/profile/yuta.run',
+      socialId: 'yuta.run',
+      name: 'Bluesky',
+      iconName: 'bluesky',
+    },
+  ]
+
   const skills = [
     {
       category: 'Backend',
@@ -39,31 +66,15 @@ export default function Home() {
       <section className='mb-10'>
         <h2 className='text-2xl font-bold tracking-tight text-black mb-4'>Links</h2>
         <div className='flex flex-wrap gap-8'>
-          <SocialLinkButton
-            href='https://github.com/yuta-hayashi'
-            socialId='yuta-hayashi'
-            name='GitHub'
-            iconName='github'
-            className=''
-          />
-          <SocialLinkButton
-            href='https://zenn.dev/hyuta'
-            socialId='hyuta'
-            name='Zenn'
-            iconName='zenn'
-          />
-          <SocialLinkButton
-            href='https://twitter.com/hyuta555'
-            socialId='hyuta555'
-            name='X'
-            iconName='x'
-          />
-          <SocialLinkButton
-            href='https://bsky.app/profile/yuta.run'
-            socialId='yuta.run'
-            name='Bluesky'
-            iconName='bluesky'
-          />
+          {socialLinks.map((socialLink) => (
+            <SocialLinkButton
+              key={socialLink.name}
+              href={socialLink.href}
+              socialId={socialLink.socialId}
+              name={socialLink.name}
+              iconName={socialLink.iconName}
+            />
+          ))}
         </div>
       </section>
 

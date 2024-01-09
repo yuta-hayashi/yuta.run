@@ -1,6 +1,7 @@
 import { SocialLinkButton } from '@/app/_components/SocialLinkButton'
+import { getTimeline } from '@/lib/timeline'
 
-export default function Home() {
+export default async function Home() {
   const socialLinks = [
     {
       href: 'https://github.com/yuta-hayashi',
@@ -48,6 +49,11 @@ export default function Home() {
     },
   ]
 
+  const activities = await getTimeline().catch((e) => {
+    console.error(e)
+    return { articles: [] }
+  })
+
   return (
     <main className='mx-auto my-6 max-w-4xl px-6 lg:px-8'>
       <div className='mb-10'>
@@ -92,6 +98,30 @@ export default function Home() {
                   <dd className='mt-1 text-sm leading-6 text-gray-700 col-span-5 sm:mt-0'>
                     {skill.skills}
                   </dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <section className='mb-10'>
+        <h2 className='text-2xl font-bold tracking-tight text-black mb-4'>Activity</h2>
+        <p className='mt-1 max-w-2xl leading-6 text-gray-500'>
+          ブログやZennなどに執筆した記事をまとめています。
+        </p>
+        <div>
+          <div className='mt-6 border-t border-gray-100'>
+            <dl className='divide-y divide-gray-100'>
+              {activities.articles.map((article) => (
+                <div className='py-6 grid grid-cols-1 gap-4' key={article.id}>
+                  <a href={article.link} target='_blank' rel='noopener noreferrer'>
+                    <p className='leading-6 text-lg font-medium mb-2'>{article.title}</p>
+                    <p className='text-gray-800'>{article.content}...</p>
+                    <span className='mt-1 text-sm leading-6 text-gray-500'>
+                      {new Date(article.pubDate).toLocaleDateString()}
+                    </span>
+                  </a>
                 </div>
               ))}
             </dl>

@@ -8,12 +8,6 @@ type Props = {
   }
 }
 
-export async function getServerSideProps() {
-  const articles = await getArticles()
-  return articles.map((article) => ({
-    slug: article.slug,
-  }))
-}
 export const dynamicParams = false
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

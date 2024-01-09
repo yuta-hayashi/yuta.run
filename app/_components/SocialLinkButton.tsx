@@ -12,6 +12,7 @@ export const SocialLinkButton = (props: Props) => {
     <a
       href={props.href}
       target='_blank'
+      rel='noopener noreferrer'
       className={`flex w-44 p-2 hover:bg-gray-100 rounded-lg ${props.className || ''}`}
     >
       <div className='flex items-center'>

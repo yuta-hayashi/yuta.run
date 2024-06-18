@@ -10,6 +10,11 @@ export type Article = {
   slug: string
   body: string
   tags: Tag[]
+  published_at: string
+  emoji_icon: {
+    value: string
+    type: string
+  }
 }
 
 export type ActivityItem = {

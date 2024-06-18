@@ -1,34 +1,8 @@
 import { SocialLinkButton } from '@/app/_components/SocialLinkButton'
 import { getTimeline } from '@/lib/timeline'
+import { socialLinks } from '@/lib/data'
 
 export default async function Home() {
-  const socialLinks = [
-    {
-      href: 'https://github.com/yuta-hayashi',
-      socialId: 'yuta-hayashi',
-      name: 'GitHub',
-      iconName: 'github',
-    },
-    {
-      href: 'https://zenn.dev/hyuta',
-      socialId: 'hyuta',
-      name: 'Zenn',
-      iconName: 'zenn',
-    },
-    {
-      href: 'https://twitter.com/hyuta555',
-      socialId: 'hyuta555',
-      name: 'X',
-      iconName: 'x',
-    },
-    {
-      href: 'https://bsky.app/profile/yuta.run',
-      socialId: 'yuta.run',
-      name: 'Bluesky',
-      iconName: 'bluesky',
-    },
-  ]
-
   const skills = [
     {
       category: 'Backend',

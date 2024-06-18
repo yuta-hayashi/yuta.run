@@ -2,6 +2,7 @@ import { getArticleBySlug } from '@/lib/newt'
 import type { Metadata } from 'next'
 import type { Article } from '@/types/newtApi'
 import { TagTip } from '@/app/_components/TagTip'
+import { ProfileCard } from '@/app/_components/ProfileCard'
 
 type Props = {
   params: {
@@ -37,6 +38,8 @@ export default async function Article({ params }: Props) {
       ))}
       <p className='my-2'>公開日: {new Date(article.published_at).toLocaleDateString()}</p>
       <article dangerouslySetInnerHTML={{ __html: article.body }} className='' />
+      <hr className='not-prose my-8' />
+      <ProfileCard />
     </main>
   )
 }

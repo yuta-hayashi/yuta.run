@@ -17,6 +17,18 @@ export type Article = {
   }
 }
 
+export type ArticleMeta = {
+  _id: string
+  title: string
+  slug: string
+  tags: Tag[]
+  published_at: string
+  emoji_icon: {
+    value: string
+    type: string
+  }
+}
+
 export type ActivityItem = {
   _id: string
   title: string

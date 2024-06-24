@@ -15,7 +15,6 @@ export const dynamicParams = false
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = params
   const article = await getArticleBySlug(slug)
-  console.log(article)
 
   return {
     title: article?.title,
